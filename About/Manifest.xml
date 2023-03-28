@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Manifest>
+  <identifier>FloorsAreLightPath</identifier>
+  <version>0.5.0</version>
+  <suggests>
+    <li>2133918278</li>
+  </suggests>
+  <!-- <manifestUri>https://raw.githubusercontent.com/Lurmey/floorsarelight/master/About/Manifest.xml</manifestUri>
+  <downloadUri>https://github.com/Lurmey/floorsarelight/releases/tag/0.3.0</downloadUri> -->
+</Manifest>

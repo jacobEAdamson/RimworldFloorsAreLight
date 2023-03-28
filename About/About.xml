@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Floors Are Light! [Path]</name>
+  <author>PathogenXD</author>
+  <packageId>PathogenXD.floorsarelight</packageId>
+  <url>
+  </url>
+  <supportedVersions>
+    <li>1.4</li>
+  </supportedVersions>
+  <description>Patches Vanilla, Royalty, and Stuffed Floors (by Fluffy) to require more realistic terrain affordances.
+
+Wooden floors and Carpets now require only Light affordance.
+Metal floors and Sterile tile now require Medium afforance.
+Stone floors and Concrete still require Heavy affordance.</description>
+  <modDependencies />
+  <incompatibleWith />
+  <loadBefore />
+  <loadAfter>
+    <li>fluffy.stuffedfloors</li>
+  </loadAfter>
+</ModMetaData>
