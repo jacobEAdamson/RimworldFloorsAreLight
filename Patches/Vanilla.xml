@@ -35,13 +35,13 @@
       </li>
 
       <li Class="PatchOperationAdd">
-        <xpath>Defs/TerrainDef[@Name="StrawMatting"]</xpath>
+        <xpath>Defs/TerrainDef[defName="StrawMatting"]</xpath>
         <value>
           <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
         </value>
       </li>
       <li Class="PatchOperationAdd">
-        <xpath>Defs/TerrainDef[@Name="StrawMatting"]</xpath>
+        <xpath>Defs/TerrainDef[defName="StrawMatting"]</xpath>
         <value>
           <affordances Inherit="False">
             <li>Light</li>

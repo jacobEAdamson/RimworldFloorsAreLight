@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using HarmonyLib;
 using RimWorld;
@@ -13,6 +14,7 @@ public static class Patches
 		Harmony harmony = new Harmony("lurmey.floorsarelight");
 		harmony.Patch(typeof(GenConstruct).GetMethod("CanBuildOnTerrain"), null, new HarmonyMethod(typeof(Patches).GetMethod("CanBuildOnTerrain_Postfix")));
 		harmony.Patch(typeof(GenConstruct).GetMethod("CanPlaceBlueprintAt"), null, new HarmonyMethod(typeof(Patches).GetMethod("CanPlaceBlueprintAt_Postfix")));
+		harmony.Patch(typeof(TerrainDefGenerator_Carpet).GetMethod("ImpliedTerrainDefs"), null, new HarmonyMethod(typeof(Patches).GetMethod("TerrainDefGenerator_Carpet_ImpliedTerrainDefs_Postfix")));
 	}
 
 	public static void CanBuildOnTerrain_Postfix(BuildableDef entDef, IntVec3 c, Map map, Rot4 rot, ref bool __result, Thing thingToIgnore = null, ThingDef stuffDef = null)
@@ -54,6 +56,13 @@ public static class Patches
 			{
 				__result = new AcceptanceReport("NoFloorsOnBridges".Translate());
 			}
+		}
+	}
+
+	public static void TerrainDefGenerator_Carpet_ImpliedTerrainDefs_Postfix(ref IEnumerable<TerrainDef>  __result) {
+		foreach (var def in __result) {
+			def.affordances = new List<TerrainAffordanceDef> { TerrainAffordanceDefOf.Light };
+			def.terrainAffordanceNeeded = TerrainAffordanceDefOf.Light;
 		}
 	}
 }
